@@ -1,0 +1,32 @@
+
+#:set char_to_type={   &
+    's':   'real(c_float)',    &
+    'd':   'real(c_double)',    &
+    'c':   'complex(c_float)', &
+    'z':   'complex(c_double)', &
+}
+
+#:set char_to_kind={   &
+    's':   'c_float',    &
+    'd':   'c_double',    &
+    'c':   'c_float', &
+    'z':   'c_double', &
+}
+
+#:def BLIS_INTERFACE(name,chars,code)
+
+interface ${name.replace('?','')}$
+#:for char in chars 
+#:set cname = name.replace('?','bli_' + char)
+#:set ctype = char_to_type.get(char,None)
+#:set ckind = char_to_kind.get(char,None)
+$:code(cname,ctype,ckind)
+#:endfor
+end interface
+
+#:enddef
+
+#:def BLIS_HEAD(name,args)
+${name}$${args}$ bind(c,name="${name}$")
+#:enddef
+
