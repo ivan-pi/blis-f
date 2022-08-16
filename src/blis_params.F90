@@ -1,6 +1,7 @@
 module blis_params
 
-  use blis_kinds
+  use blis_kinds, only:
+
   implicit none
   private
 

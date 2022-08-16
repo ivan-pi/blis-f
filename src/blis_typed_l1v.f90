@@ -12,6 +12,6 @@ module blis_typed_l1v
             invertv, scalv, scal2v, setv, subv, swapv, xpbyv
 
 
-  include "interface/t-blis1v.inc"
+  include "interface/blis-typed-l1v.inc"
 
 end module

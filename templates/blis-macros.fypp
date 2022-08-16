@@ -14,7 +14,6 @@
 }
 
 #:def BLIS_INTERFACE(name,chars,code)
-
 interface ${name.replace('?','')}$
 #:for char in chars 
 #:set cname = name.replace('?','bli_' + char)
@@ -30,3 +29,4 @@ end interface
 ${name}$${args}$ bind(c,name="${name}$")
 #:enddef
 
+#:set chars = ['s','d','c','z']

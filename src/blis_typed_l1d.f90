@@ -8,10 +8,10 @@ module blis_typed_l1d
   !
   ! BLIS Level-1d
   !
-  public :: addd, axpyd, copyd, invertd, scald, scal2d, setd, setid, &
-            shiftd, subd, xpbyd
+  public :: addd, axpyd, copyd, invertd, scald, scal2d, & 
+            setd, setid, shiftd, subd, xpbyd
 
 
-  include "interface/t-blis1d.inc"
+  include "interface/blis-typed-l1d.inc"
 
 end module

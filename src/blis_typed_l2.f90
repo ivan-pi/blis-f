@@ -10,6 +10,6 @@ module blis_typed_l2
   public :: gemv, ger, hemv, her, her2, symv, syr, syr2, trmv, trsv
   
 
-  include "interface/t-blis2.inc"
+  include "interface/blis-typed-l2.inc"
 
 end module

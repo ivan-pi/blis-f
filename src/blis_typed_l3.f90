@@ -8,9 +8,11 @@ module blis_typed_l3
   !
   ! BLIS Level-3
   !
-  public :: gemm, hemm, herk, her2k, symm, syrk, syr2k, trmm, trmm3, trsm
+  public :: gemm, &
+            hemm, herk, her2k, &
+            symm, syrk, syr2k, &
+            trmm, trmm3, trsm
 
-
-  include "interface/t-blis3.inc"
+  include "interface/blis-typed-l3.inc"
 
 end module

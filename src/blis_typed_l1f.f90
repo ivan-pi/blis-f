@@ -11,6 +11,6 @@ module blis_typed_l1f
   public :: axpy2v, dotaxpyv, axpyf, dotxf, dotxaxpyf
   
 
-  include "interface/t-blis1f.inc"
+  include "interface/blis-typed-l1f.inc"
 
 end module

@@ -11,6 +11,6 @@ module blis_typed_l1m
   public :: addm, axpym, copym, scalm, scal2m, setm, subm
 
 
-  include "interface/t-blis1m.inc"
+  include "interface/blis-typed-l1m.inc"
 
 end module
