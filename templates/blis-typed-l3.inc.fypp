@@ -1,0 +1,81 @@
+#:include "blis-macros.fypp"
+
+#:def gemm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def gemmt(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def hemm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def herk(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def her2k(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def symm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def syrk(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def syr2k(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def trmm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def trmm3(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def trsm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+!
+! BLIS Level-3
+!
+$:BLIS_INTERFACE('?gemm',chars,gemm)
+$:BLIS_INTERFACE('?hemm',chars,hemm)
+$:BLIS_INTERFACE('?herk',chars,herk)
+$:BLIS_INTERFACE('?her2k',chars,her2k)
+$:BLIS_INTERFACE('?symm',chars,symm)
+$:BLIS_INTERFACE('?syrk',chars,syrk)
+$:BLIS_INTERFACE('?syr2k',chars,syr2k)
+$:BLIS_INTERFACE('?trmm',chars,trmm)
+$:BLIS_INTERFACE('?trmm3',chars,trmm3)
+$:BLIS_INTERFACE('?trsm',chars,trsm)

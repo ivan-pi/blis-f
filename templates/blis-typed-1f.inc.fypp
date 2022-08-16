@@ -1,0 +1,40 @@
+#:include "blis-macros.fypp"
+
+#:def axpy2v(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def dotaxpyv(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def axpyf(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def dotxf(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def dotxaxpyf(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+!
+! BLIS Level-1f
+!
+$:BLIS_INTERFACE('?axpy2v',chars,axpy2v)
+$:BLIS_INTERFACE('?dotaxpyv',chars,dotaxpyv)
+$:BLIS_INTERFACE('?axpyf',chars,axpyf)
+$:BLIS_INTERFACE('?dotxf',chars,dotxf)
+$:BLIS_INTERFACE('?dotxaxpyf',chars,dotxaxpyf)

@@ -1,0 +1,76 @@
+#:include "blis-macros.fypp"
+
+#:def gemv(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(transa,conjx,m,n,alpha,a,rsa,csa,x,incx,beta,y,incy)")}$
+
+  end subroutine
+#:enddef
+
+#:def ger(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(conjx,conjy,m,n,alpha,x,incx,y,incy,a,rsa,csa)")}$
+
+  end subroutine
+#:enddef
+
+#:def hemv(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,conja,conjx,m,alpha,a,rsa,csa,x,incx,beta,y,incy)")}$
+
+  end subroutine
+#:enddef
+
+#:def her(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,conjx,m,alpha,x,incx,a,rsa,csa)")}$
+
+  end subroutine
+#:enddef
+
+#:def her2(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,conjx,conjy,m,alpha,x,incx,y,incy,a,rsa,csa)")}$
+
+  end subroutine
+#:enddef
+
+#:def symv(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,conja,conjx,m,alpha,a,rsa,csa,x,incx,beta,y,incy)")}$
+
+  end subroutine
+#:enddef
+
+#:def syr(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,conjx,m,alpha,x,incx,a,rsa,csa)")}$
+
+  end subroutine
+#:enddef
+
+#:def syr2(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,conjx,conjy,m,alpha,x,incx,y,incy,a,rsa,csa)")}$
+
+  end subroutine
+#:enddef
+
+#:def trmv(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,transa,diaga,m,alpha,a,rsa,csa,x,incx)")}$
+
+  end subroutine
+#:enddef
+
+#:def trsv(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(uploa,transa,diaga,m,alpha,a,rsa,csa,y,incy)")}$
+
+  end subroutine
+#:enddef
+
+
+!
+! BLIS Level-2
+!
+$:BLIS_INTERFACE('?gemv',chars,gemv)
+$:BLIS_INTERFACE('?ger',chars,ger)
+$:BLIS_INTERFACE('?hemv',chars,hemv)
+$:BLIS_INTERFACE('?her',chars,her)
+$:BLIS_INTERFACE('?her2',chars,her2)
+$:BLIS_INTERFACE('?symv',chars,symv)
+$:BLIS_INTERFACE('?syr',chars,syr)
+$:BLIS_INTERFACE('?syr2',chars,syr2)
+$:BLIS_INTERFACE('?trmv',chars,trmv)
+$:BLIS_INTERFACE('?trsv',chars,trsv)

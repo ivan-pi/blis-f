@@ -1,0 +1,89 @@
+#:include "blis-macros.fypp"
+
+#:def addd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(diagoffa,diaga,transa,m,n,a,rsa,csa,b,rsb,csb)")}$
+    integer(doff_t), value :: diagoffa
+    integer(diag_t), value :: diaga
+    integer(trans_t), value :: transa
+    integer(dim_t), value :: m, n
+    ${ctype}, intent(in) :: a(*)
+    integer(inc_t), value :: rsa, csa
+    ${ctype}, intent(inout) :: b(*)
+    integer(inc_t), value :: rsb, csb
+  end subroutine
+#:enddef
+
+#:def axpyd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def copyd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def invertd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def scald(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def scal2d(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def setd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def setid(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def shiftd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def subd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+#:def xpbyd(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"()")}$
+
+  end subroutine
+#:enddef
+
+!
+! -- Level-1d --
+!
+$:BLIS_INTERFACE('?addd',chars,addd)
+$:BLIS_INTERFACE('?axpyd',chars,axpyd)
+$:BLIS_INTERFACE('?copyd',chars,copyd)
+$:BLIS_INTERFACE('?invertd',chars,invertd)
+$:BLIS_INTERFACE('?scald',chars,scald)
+$:BLIS_INTERFACE('?scal2d',chars,scal2d)
+$:BLIS_INTERFACE('?setd',chars,setd)
+$:BLIS_INTERFACE('?setid',chars,setid)
+$:BLIS_INTERFACE('?shiftd',chars,shiftd)
+$:BLIS_INTERFACE('?subd',chars,subd)
+$:BLIS_INTERFACE('?xpbyd',chars,xpbyd)

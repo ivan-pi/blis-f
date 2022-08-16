@@ -1,0 +1,114 @@
+#:include "blis-macros.fypp"
+
+#:def addm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(diagoffa,diaga,uploa,transa,m,n,a,rsa,csa,b,rsb,csb)")}$
+    import doff_t, diag_t, uplo_t, trans_t, dim_t, ${ckind}$
+    integer(doff_t), value :: diagoffa
+    integer(diag_t), value :: diaga
+    integer(uplo_t), value :: uploa
+    integer(trans_t), value :: transa
+    integer(dim_t), value :: m, n
+    ${ctype}$, intent(in) :: a(csa,*)
+    integer(inc_t), value :: rsa, csa
+    ${ctype}$, intent(inout) :: b(csb,*)
+    integer(inc_t), value :: rsb, csb
+  end subroutine
+#:enddef
+
+#:def axpym(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(diagoffa,diaga,uploa,transa,m,n,alpha,a,rsa,csa,b,rsb,csb)")}$
+    import doff_t, diag_t, uplo_t, trans_t, dim_t, ${ckind}$
+    integer(doff_t), value :: diagoffa
+    integer(diag_t), value :: diaga
+    integer(uplo_t), value :: uploa
+    integer(trans_t), value :: transa
+    integer(dim_t), value :: m, n
+    ${ctype}$, intent(in) :: a(csa,*)
+    integer(inc_t), value :: rsa, csa
+    ${ctype}$, intent(inout) :: b(csb,*)
+    integer(inc_t), value :: rsb, csb
+  end subroutine
+#:enddef
+
+#:def copym(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(diagoffa,diaga,uploa,transa,m,n,a,rsa,csa,b,rsb,csb)")}$
+    import doff_t, diag_t, uplo_t, trans_t, dim_t, ${ckind}$
+    integer(doff_t), value :: diagoffa
+    integer(diag_t), value :: diaga
+    integer(uplo_t), value :: uploa
+    integer(trans_t), value :: transa
+    integer(dim_t), value :: m, n
+    ${ctype}$, intent(in) :: a(csa,*)
+    integer(inc_t), value :: rsa, csa
+    ${ctype}$, intent(inout) :: b(csb,*)
+    integer(inc_t), value :: rsb, csb
+  end subroutine
+#:enddef
+
+#:def scalm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(conjalpha,diagoffa,uploa,m,n,alpha,a,rsa,csa)")}$
+    import conj_t, doff_t, diag_t, uplo_t, trans_t, dim_t, ${ckind}$
+    integer(conj_t), value :: conjalpha
+    integer(doff_t), value :: diagoffa
+    integer(uplo_t), value :: uploa
+    integer(dim_t), value :: m, n
+    ${ctype}$, intent(in) :: alpha
+    ${ctype}$, intent(inout) :: a(csa,*)
+    integer(inc_t), value :: rsa, csa
+  end subroutine
+#:enddef
+
+#:def scal2m(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(diagoffa,diaga,uploa,transa,m,n,alpha,a,rsa,csa,b,rsb,csb)")}$
+    import doff_t, diag_t, uplo_t, trans_t, dim_t, ${ckind}$
+    integer(doff_t), value :: diagoffa
+    integer(diag_t), value :: diaga
+    integer(uplo_t), value :: uploa
+    integer(dim_t), value :: m, n
+    ${ctype}$, intent(in) :: alpha
+    ${ctype}$, intent(in) :: a(csa,*)
+    integer(inc_t), value :: rsa, csa
+    ${ctype}$, intent(inout) :: b(csb,*)
+    integer(inc_t), value :: rsb, csb
+  end subroutine
+#:enddef
+
+#:def setm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(conjalpha,diagoffa,diaga,uploa,m,n,alpha,a,rsa,csa)")}$
+    import conj_t, doff_t, diag_t, uplo_t, trans_t, dim_t, ${ckind}$
+    integer(conj_t), value :: conjalpha
+    integer(doff_t), value :: diagoffa
+    integer(diag_t), value :: diaga
+    integer(uplo_t), value :: uploa
+    integer(dim_t), value :: m, n
+    ${ctype}$, intent(in) :: alpha
+    ${ctype}$, intent(inout) :: a(csa,*)
+    integer(inc_t), value :: rsa, csa
+  end subroutine
+#:enddef
+
+#:def subm(name,ctype,ckind)
+  subroutine ${BLIS_HEAD(name,"(diagoffa,diaga,uploa,transa,m,n,a,rsa,csa,b,rsb,csb)")}$
+    import doff_t, diag_t, uplo_t, trans_t, dim_t, ${ckind}$
+    integer(doff_t), value :: diagoffa
+    integer(diag_t), value :: diaga
+    integer(uplo_t), value :: uploa
+    integer(trans_t), value :: transa
+    integer(dim_t), value :: m, n
+    ${ctype}$, intent(in) :: a(csa,*)
+    integer(inc_t), value :: rsa, csa
+    ${ctype}$, intent(inout) :: b(csb,*)
+    integer(inc_t), value :: rsb, csb
+  end subroutine
+#:enddef
+
+!
+! BLIS Level-1m
+!
+$:BLIS_INTERFACE('?addm',chars,addm)
+$:BLIS_INTERFACE('?axpym',chars,axpym)
+$:BLIS_INTERFACE('?copym',chars,copym)
+$:BLIS_INTERFACE('?scalm',chars,scalm)
+$:BLIS_INTERFACE('?scal2m',chars,scal2m)
+$:BLIS_INTERFACE('?setm',chars,setm)
+$:BLIS_INTERFACE('?subm',chars,subm)
