@@ -8,6 +8,17 @@ FYPP_OUT=src/interface
 
 FYPP_OPTIONS=
 
+
+FC=gfortran
+CC=gcc
+
+all: src/blis_kinds.o
+
+src/blis_kinds.o src/blis_kinds.mod: src/blis_kinds.f90
+	$(FC) -J$(@D) -c -o $(@D)/$(*F).o $< 
+
+
+
 inc: src/interface/blis-typed-1v.inc \
 	 src/interface/blis-typed-1d.inc \
 	 src/interface/blis-typed-1m.inc \
@@ -32,3 +43,5 @@ $(FYPP_OUT)/blis-typed-l3.inc: $(FYPP_IN)/blis-typed-l3.inc.fypp $(FYPP_IN)/blis
 
 clean:
 	rm -fv $(FYPP_OUT)/*.inc
+	rm -f src/*.o
+	rm -f src/*.mod
