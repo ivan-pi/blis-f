@@ -12,5 +12,4 @@ module blis_kinds
   integer, parameter :: invdiag_t = c_int
   integer, parameter :: struc_t   = c_int
 
-
 end module
