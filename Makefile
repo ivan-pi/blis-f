@@ -7,7 +7,7 @@ FYPP_OPTIONS=
 FC=gfortran
 CC=gcc
 
-all: src/blis_kinds.o
+all: inc src/blis_kinds.o
 
 src/blis_kinds.o src/blis_kinds.mod: src/blis_kinds.f90
 	$(FC) -J$(@D) -c -o $(@D)/$(*F).o $< 
